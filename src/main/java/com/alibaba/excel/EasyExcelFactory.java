@@ -436,12 +436,12 @@ public class EasyExcelFactory {
      */
     public static ExcelReaderBuilder read(String pathName, Class head, ReadListener readListener) {
         ExcelReaderBuilder excelReaderBuilder = new ExcelReaderBuilder();
-        excelReaderBuilder.file(pathName);
+        excelReaderBuilder.file(pathName);// c创建了工作本地 workbook
         if (head != null) {
             excelReaderBuilder.head(head);
         }
         if (readListener != null) {
-            excelReaderBuilder.registerReadListener(readListener);
+            excelReaderBuilder.registerReadListener(readListener);// 1.调用 excelReaderBuilder 父类方法 registerReadListener
         }
         return excelReaderBuilder;
     }

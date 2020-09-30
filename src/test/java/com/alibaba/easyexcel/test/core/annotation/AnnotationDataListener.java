@@ -23,6 +23,7 @@ public class AnnotationDataListener extends AnalysisEventListener<AnnotationData
 
     @Override
     public void invoke(AnnotationData data, AnalysisContext context) {
+        LOGGER.info("yun【0】:AnnotationDataListenerc传入的数据："+data);
         list.add(data);
     }
 

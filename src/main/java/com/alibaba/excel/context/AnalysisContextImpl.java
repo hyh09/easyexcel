@@ -83,8 +83,8 @@ public class AnalysisContextImpl implements AnalysisContext {
                 break;
         }
         currentReadHolder = readSheetHolder;
-        if (readWorkbookHolder.getHasReadSheet().contains(readSheetHolder.getSheetNo())) {
-            throw new ExcelAnalysisException("Cannot read sheet repeatedly.");
+        if (readWorkbookHolder.getHasReadSheet().contains(readSheetHolder.getSheetNo())) { //
+            throw new ExcelAnalysisException("Cannot read sheet repeatedly."); //Cannot read sheet repeatedly  不能重复读表
         }
         readWorkbookHolder.getHasReadSheet().add(readSheetHolder.getSheetNo());
         if (LOGGER.isDebugEnabled()) {

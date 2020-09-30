@@ -30,7 +30,7 @@ public abstract class AbstractParameterBuilder<T extends AbstractParameterBuilde
      * @return
      */
     public T head(Class clazz) {
-        parameter().setClazz(clazz);
+        parameter().setClazz(clazz);///???? s什么
         return self();
     }
 
@@ -94,5 +94,5 @@ public abstract class AbstractParameterBuilder<T extends AbstractParameterBuilde
      *
      * @return
      */
-    protected abstract C parameter();
+    protected abstract C parameter();///>????
 }

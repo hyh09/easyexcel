@@ -20,6 +20,8 @@ public class CellDataDataListener extends AnalysisEventListener<CellDataData> {
 
     @Override
     public void invoke(CellDataData data, AnalysisContext context) {
+        LOGGER.info("yun【2】:CellDataDataListener【父类AnalysisEventListener】传入的数据："+data);
+
         list.add(data);
     }
 

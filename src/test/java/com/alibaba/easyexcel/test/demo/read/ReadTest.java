@@ -45,21 +45,35 @@ public class ReadTest {
         // 写法1：
         String fileName = TestFileUtil.getPath() + "demo" + File.separator + "demo.xlsx";
         // 这里 需要指定读用哪个class去读，然后读取第一个sheet 文件流会自动关闭
-        EasyExcel.read(fileName, DemoData.class, new DemoDataListener()).sheet().doRead();
+        EasyExcel.read(fileName,
+                  DemoData.class,
+                  new DemoDataListener()
+                    )
+                .sheet().doRead();
+
+        /*********
+         *  写法1
+         *     程序是怎么知道获取sheet1?
+         *     程序是怎么知道标题是第一行？
+         *     程序是怎么反射set值的？
+         *
+         *     ##以前我们首先创建workbook , sheet , 获取行，再获取列
+         *
+         */
 
         // 写法2：
-        fileName = TestFileUtil.getPath() + "demo" + File.separator + "demo.xlsx";
-        ExcelReader excelReader = null;
-        try {
-            excelReader = EasyExcel.read(fileName, DemoData.class, new DemoDataListener()).build();
-            ReadSheet readSheet = EasyExcel.readSheet(0).build();
-            excelReader.read(readSheet);
-        } finally {
-            if (excelReader != null) {
-                // 这里千万别忘记关闭，读的时候会创建临时文件，到时磁盘会崩的
-                excelReader.finish();
-            }
-        }
+//        fileName = TestFileUtil.getPath() + "demo" + File.separator + "demo.xlsx";
+//        ExcelReader excelReader = null;
+//        try {
+//            excelReader = EasyExcel.read(fileName, DemoData.class, new DemoDataListener()).build();
+//            ReadSheet readSheet = EasyExcel.readSheet(0).build();
+//            excelReader.read(readSheet);
+//        } finally {
+//            if (excelReader != null) {
+//                // 这里千万别忘记关闭，读的时候会创建临时文件，到时磁盘会崩的
+//                excelReader.finish();
+//            }
+//        }
     }
 
     /**

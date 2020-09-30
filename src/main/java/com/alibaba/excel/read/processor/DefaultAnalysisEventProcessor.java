@@ -81,19 +81,24 @@ public class DefaultAnalysisEventProcessor implements AnalysisEventProcessor {
     }
 
     private void dealData(AnalysisContext analysisContext) {
-        ReadRowHolder readRowHolder = analysisContext.readRowHolder();
+        ReadRowHolder readRowHolder = analysisContext.readRowHolder();  //当前操作单元的行
         Map<Integer, CellData> cellDataMap = (Map)readRowHolder.getCellMap();
         readRowHolder.setCurrentRowAnalysisResult(cellDataMap);
-        int rowIndex = readRowHolder.getRowIndex();
-        int currentHeadRowNumber = analysisContext.readSheetHolder().getHeadRowNumber();
+        int rowIndex = readRowHolder.getRowIndex();//行索引
+         LOGGER.info("当前读取的行数:"+rowIndex+"【yun行索引】");
 
-        boolean isData = rowIndex >= currentHeadRowNumber;
+        int currentHeadRowNumber = analysisContext.readSheetHolder().getHeadRowNumber();  //表格的信息【0：没有头， 1有一个头， 2 表示有2个头】
+
+        boolean isData = rowIndex >= currentHeadRowNumber;/// ?? /// 如果当前行数大于表头索引，就是表示这个是内容；
+                                                                 // 小于标题
 
         // Last head column
         if (!isData && currentHeadRowNumber == rowIndex + 1) {
-            buildHead(analysisContext, cellDataMap);
+            buildHead(analysisContext, cellDataMap); /// 标题的信息操作
         }
         // Now is data
+        //??  analysisContext.currentReadHolder().readListenerList()  的类是什么时候传的？？
+        LOGGER.info("??什么时候根据什么传入的类："+analysisContext.currentReadHolder().readListenerList());
         for (ReadListener readListener : analysisContext.currentReadHolder().readListenerList()) {
             try {
                 if (isData) {

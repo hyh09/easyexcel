@@ -17,7 +17,7 @@ public class ReadRowHolder implements Holder {
     /**
      * Returns row index of a row in the sheet that contains this cell.Start form 0.
      */
-    private Integer rowIndex;
+    private Integer rowIndex;  //行索引
     /**
      * Row type
      */

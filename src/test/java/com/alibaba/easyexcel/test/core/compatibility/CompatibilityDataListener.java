@@ -21,6 +21,7 @@ public class CompatibilityDataListener extends AnalysisEventListener<List<String
 
     @Override
     public void invoke(List<String> data, AnalysisContext context) {
+        LOGGER.info("yun【4】:CompatibilityDataListener传入的数据："+data);
         list.add(data);
     }
 

@@ -46,6 +46,7 @@ public class ExcelHeadProperty {
      */
     private int headRowNumber;
     /**
+     * 配置头的信息
      * Configuration header information
      */
     private Map<Integer, Head> headMap;

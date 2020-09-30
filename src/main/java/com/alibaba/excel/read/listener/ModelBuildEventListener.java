@@ -32,6 +32,7 @@ public class ModelBuildEventListener extends AbstractIgnoreExceptionReadListener
 
     @Override
     public void invoke(Map<Integer, CellData> cellDataMap, AnalysisContext context) {
+
         ReadHolder currentReadHolder = context.currentReadHolder();
         if (HeadKindEnum.CLASS.equals(currentReadHolder.excelReadHeadProperty().getHeadKind())) {
             context.readRowHolder()

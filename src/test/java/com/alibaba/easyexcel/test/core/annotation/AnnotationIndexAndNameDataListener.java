@@ -20,6 +20,8 @@ public class AnnotationIndexAndNameDataListener extends AnalysisEventListener<An
 
     @Override
     public void invoke(AnnotationIndexAndNameData data, AnalysisContext context) {
+        LOGGER.info("yun【1】:AnnotationIndexAndNameDataListener【父类是AnalysisEventListener】传入的数据："+data);
+
         list.add(data);
     }
 

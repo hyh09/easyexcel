@@ -27,7 +27,7 @@ public class CellDataDemoHeadDataListener extends AnalysisEventListener<CellData
 
     @Override
     public void invoke(CellDataReadDemoData data, AnalysisContext context) {
-        LOGGER.info("解析到一条数据:{}", JSON.toJSONString(data));
+        LOGGER.info("【3业务】解析到一条数据:{}", JSON.toJSONString(data));
         if (list.size() >= BATCH_COUNT) {
             saveData();
             list.clear();

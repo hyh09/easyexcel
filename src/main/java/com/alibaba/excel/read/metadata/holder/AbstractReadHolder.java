@@ -30,11 +30,11 @@ public abstract class AbstractReadHolder extends AbstractHolder implements ReadH
      * Count the number of added heads when read sheet.
      *
      * <p>
-     * 0 - This Sheet has no head ,since the first row are the data
+     * 0 - This Sheet has no head ,since the first row are the data  -这个表格没有头，因为第一行是数据
      * <p>
-     * 1 - This Sheet has one row head , this is the default
+     * 1 - This Sheet has one row head , this is the default         这个表格有一个行头，这是默认的
      * <p>
-     * 2 - This Sheet has two row head ,since the third row is the data
+     * 2 - This Sheet has two row head ,since the third row is the data  这个工作表有两个行头，因为第三行是数据
      */
     private Integer headRowNumber;
     /**

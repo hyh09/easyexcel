@@ -51,7 +51,7 @@ public interface AnalysisContext {
     void readRowHolder(ReadRowHolder readRowHolder);
 
     /**
-     * Row of currently operated cell
+     * Row of currently operated cell 当前操作单元的行
      *
      * @return Current row holder
      */

@@ -20,6 +20,7 @@ public class ComplexDataListener extends AnalysisEventListener<ComplexHeadData> 
 
     @Override
     public void invoke(ComplexHeadData data, AnalysisContext context) {
+        LOGGER.info("yun【4】:ComplexDataListener 传入的数据："+data);
         list.add(data);
     }
 
